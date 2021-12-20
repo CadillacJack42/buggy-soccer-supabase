@@ -35,7 +35,6 @@ nameForm.addEventListener('submit', (event) => {
     const formData = new FormData(nameForm);
   
     const name1 = formData.get('team-one');
-    console.log(name1);
     const name2 = formData.get('team-two');
 
     currentGame.name1 = name1;
@@ -74,7 +73,6 @@ function displayCurrentGameEl() {
 
     teamOneLabel.textContent = currentGame.name1;
     teamTwoLabel.textContent = currentGame.name2;
-    console.log(currentGame);
     const gameEl = renderGame(currentGame);
     
     gameEl.classList.add('current');
@@ -124,7 +122,6 @@ logoutButton.addEventListener('click', () => {
 
 window.addEventListener('load', async() => {
     const games = await getGames();
-    console.log(games);
 
     if (games) {
         pastGames = games;
