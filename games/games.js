@@ -84,6 +84,7 @@ function displayCurrentGameEl() {
 
 
 function displayAllGames() {
+    pastGamesEl.textContent = '';
     for (let game of pastGames) {
         const gameEl = renderGame(game);
 
@@ -104,7 +105,12 @@ finishGameButton.addEventListener('click', async() => {
     
     displayAllGames();
     
-    currentGame = {};
+    currentGame = {
+        name1: '',
+        name2: '',
+        score1: 0,
+        score2: 0,
+    };
 
     displayCurrentGameEl();
 });
